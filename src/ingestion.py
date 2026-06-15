@@ -1,35 +1,18 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, count, when
-from utils import get_schema_df, get_row_count_df, get_summary_stats, get_missing_values
+import pandas as pd
+import os
 
 
-spark = SparkSession.builder \
-    .appName("FlightDelayEDA") \
-    .getOrCreate()
+df = pd.read_csv("data/sample.csv") # Will read from amazon s3 link in the final version
 
-# Load data
-df = spark.read \
-    .option("header", True) \
-    .option("inferSchema", True) \
-    .csv("data/sample.csv")
+os.makedirs("input", exist_ok=True)
 
-# EDA
-schema_df = get_schema_df(df, spark)
-row_count_df = get_row_count_df(df, spark)
-summary_df = get_summary_stats(df)
-missing_df = get_missing_values(df)
+chunk_size = 500 # Will change to 50000 for actual use
 
-# Save Outputs
-schema_df.write.mode("overwrite").csv("output/schema")
-row_count_df.write.mode("overwrite").csv("output/row_count")
-summary_df.write.mode("overwrite").csv("output/summary_stats")
-missing_df.write.mode("overwrite").csv("output/missing_values")
+for i, start in enumerate(range(0, len(df), chunk_size)):
+    chunk = df.iloc[start:start + chunk_size]
 
-df.write \
-    .mode("overwrite") \
-    .csv("output/eda_output")
-
-print("\nData written to output/eda_output")
-
-spark.stop()
-
+    chunk.to_csv(
+        f"input/flights_batch_{i}.csv",
+        index=False
+    )
