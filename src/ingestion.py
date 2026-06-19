@@ -9,7 +9,6 @@ OUTPUT_DIR = PROJECT_ROOT / "stream_input"
 
 df = pd.read_csv(INPUT_FILE)
 
-
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 chunk_size = 500 # Will change to 50000 for actual use

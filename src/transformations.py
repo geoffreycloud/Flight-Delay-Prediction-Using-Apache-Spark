@@ -79,6 +79,7 @@ def write_batch(batch_df, batch_id, model):
         "DEST",
         "OP_UNIQUE_CARRIER",
         "ARR_DELAY",
+        "is_delayed",
         "prediction",
     )
 
