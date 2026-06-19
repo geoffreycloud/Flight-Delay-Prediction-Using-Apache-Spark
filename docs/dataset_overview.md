@@ -2,7 +2,7 @@
 
 This project uses a dataset from the [Bureau of Transportation Statistics (BTS) On-Time Reporting Carrier Performance](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ). The dataset contains historical records of U.S. domestic flights and operational performance metrics.
 
-For this project, data from **2023–2026** will be analyzed, consisting of approximately **540,000** flight records in the selected dataset.
+For this project, data from **January 2023** will be analyzed, consisting of approximately **540,000** flight records in the selected dataset.
 
 Date features: `MONTH, DAY_OF_MONTH, DAY_OF_WEEK, FL_DATE`
 Airline information: `OP_UNIQUE_CARRIER`
