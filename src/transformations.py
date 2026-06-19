@@ -1,6 +1,6 @@
 from pyspark.sql.functions import avg, col, when, floor, count, round, desc
 
-def write_batch(batch_df, batch_id):
+def write_batch(batch_df, batch_id, model):
     """
     Write the batch data to a CSV file.
 
@@ -54,32 +54,15 @@ def write_batch(batch_df, batch_id):
         .mode("overwrite") \
         .option("header", True) \
         .csv(f"outputs/batch_{batch_id}/hourly_delays")
-
-    # Create flags for each type of delay
-    df_flags = batch_df.withColumn(
-        "carrier",
-        when(col("CARRIER_DELAY") > 0, 1).otherwise(0)
-    ).withColumn(
-        "weather",
-        when(col("WEATHER_DELAY") > 0, 1).otherwise(0)
-    ).withColumn(
-        "nas",
-        when(col("NAS_DELAY") > 0, 1).otherwise(0)
-    ).withColumn(
-        "security",
-        when(col("SECURITY_DELAY") > 0, 1).otherwise(0)
-    ).withColumn(
-        "late_aircraft",
-        when(col("LATE_AIRCRAFT_DELAY") > 0, 1).otherwise(0)
-    )
-
+        
+    
     # Show the average delay rate for each type of delay
-    delay_rates = df_flags.agg(
-        round(avg("carrier"), 4).alias("carrier_rate"),
-        round(avg("weather"), 4).alias("weather_rate"),
-        round(avg("nas"), 4).alias("nas_rate"),
-        round(avg("security"), 4).alias("security_rate"),
-        round(avg("late_aircraft"), 4).alias("late_aircraft_rate")
+    delay_rates = batch_df.agg(
+        round(avg("carrier_flag"), 4).alias("carrier_rate"),
+        round(avg("nas_flag"), 4).alias("nas_rate"),
+        round(avg("security_flag"), 4).alias("security_rate"),
+        round(avg("late_aircraft_flag"), 4).alias("late_aircraft_rate"),
+        round(avg("weather_flag"), 4).alias("weather_rate")
     )
     
     # Save the delay type rates to a CSV file
@@ -87,6 +70,22 @@ def write_batch(batch_df, batch_id):
         .mode("overwrite") \
         .option("header", True) \
         .csv(f"outputs/batch_{batch_id}/delay_rates")
+    
+    # Make predictions using the trained model
+    predictions = model.transform(batch_df)
+
+    ml_output = predictions.select(
+        "ORIGIN",
+        "DEST",
+        "OP_UNIQUE_CARRIER",
+        "ARR_DELAY",
+        "prediction",
+    )
+
+    ml_output.coalesce(1).write \
+        .mode("overwrite") \
+        .option("header", True) \
+        .csv(f"outputs/batch_{batch_id}/ml_predictions")
 
     # Print the results
     print("\nAIRPORT DELAYS")

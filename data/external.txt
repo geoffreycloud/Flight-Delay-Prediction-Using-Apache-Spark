@@ -1,1 +1,1 @@
-Store large datasets externally (e.g., AWS S3, public URL). Commit only small samples to /data/sample/.
+https://us-east-2.console.aws.amazon.com/s3/object/flight-records-2023-2026?region=us-east-2&prefix=T_ONTIME_REPORTING.csv
