@@ -70,7 +70,21 @@ def write_batch(batch_df, batch_id, model):
         .mode("overwrite") \
         .option("header", True) \
         .csv(f"outputs/batch_{batch_id}/delay_rates")
-    
+        
+    # Daily delay rate trend
+    daily_trend = batch_df.groupBy("FL_DATE").agg(
+        count("*").alias("total_flights"),
+        count(when(col("ARR_DELAY") >= 15, True)).alias("delayed_flights")
+    ).withColumn(
+        "delay_rate",
+        round(col("delayed_flights") / col("total_flights") * 100, 2)
+    )
+
+    daily_trend.coalesce(1).write \
+        .mode("append") \
+        .option("header", True) \
+        .csv("outputs/daily_trend")
+        
     # Make predictions using the trained model
     predictions = model.transform(batch_df)
 
