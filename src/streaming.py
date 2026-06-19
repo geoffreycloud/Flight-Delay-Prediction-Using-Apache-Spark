@@ -34,6 +34,7 @@ model = load_model()
 query = processed.writeStream \
     .outputMode("append") \
     .foreachBatch(lambda df, batch_id: write_batch(df, batch_id, model)) \
+    .trigger(availableNow=True) \
     .start()
 
 query.awaitTermination()
