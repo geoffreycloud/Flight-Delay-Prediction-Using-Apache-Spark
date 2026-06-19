@@ -25,7 +25,8 @@ processed = stream_df \
     .withColumn("nas_flag", when(col("NAS_DELAY") > 0, 1).otherwise(0)) \
     .withColumn("security_flag", when(col("SECURITY_DELAY") > 0, 1).otherwise(0)) \
     .withColumn("late_aircraft_flag", when(col("LATE_AIRCRAFT_DELAY") > 0, 1).otherwise(0)) \
-    .withColumn("weather_flag", when(col("WEATHER_DELAY") > 0, 1).otherwise(0))
+    .withColumn("weather_flag", when(col("WEATHER_DELAY") > 0, 1).otherwise(0)) \
+    .na.fill({"DEP_DELAY": 0, "DISTANCE": 0})
     
 # Load model
 model = load_model()
@@ -33,6 +34,7 @@ model = load_model()
 query = processed.writeStream \
     .outputMode("append") \
     .foreachBatch(lambda df, batch_id: write_batch(df, batch_id, model)) \
+    .trigger(availableNow=True) \
     .start()
 
 query.awaitTermination()
