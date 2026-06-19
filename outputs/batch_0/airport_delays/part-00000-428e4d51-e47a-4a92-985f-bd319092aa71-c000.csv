@@ -1,0 +1,97 @@
+ORIGIN,ORIGIN_CITY_NAME,total_flights,delayed_flights,delay_rate
+AEX,"Alexandria, LA",2,2,100.0
+CSG,"Columbus, GA",2,2,100.0
+BQK,"Brunswick, GA",2,2,100.0
+CRW,"Charleston/Dunbar, WV",2,2,100.0
+BTR,"Baton Rouge, LA",2,2,100.0
+BOI,"Boise, ID",4,3,75.0
+GTR,"Columbus, MS",2,1,50.0
+MDW,"Chicago, IL",4,2,50.0
+CHO,"Charlottesville, VA",2,1,50.0
+BWI,"Baltimore, MD",2,1,50.0
+SHV,"Shreveport, LA",2,1,50.0
+PWM,"Portland, ME",2,1,50.0
+AMA,"Amarillo, TX",2,1,50.0
+BFL,"Bakersfield, CA",2,1,50.0
+GNV,"Gainesville, FL",2,1,50.0
+DLH,"Duluth, MN",2,1,50.0
+BUR,"Burbank, CA",4,2,50.0
+MLU,"Monroe, LA",2,1,50.0
+ILM,"Wilmington, NC",3,1,33.33
+BHM,"Birmingham, AL",3,1,33.33
+BUF,"Buffalo, NY",7,2,28.57
+ROC,"Rochester, NY",4,1,25.0
+LEX,"Lexington, KY",4,1,25.0
+AUS,"Austin, TX",38,8,21.05
+ALB,"Albany, NY",5,1,20.0
+ATL,"Atlanta, GA",78,15,19.23
+TYS,"Knoxville, TN",6,1,16.67
+RDU,"Raleigh/Durham, NC",8,1,12.5
+MSP,"Minneapolis, MN",23,2,8.7
+BNA,"Nashville, TN",23,2,8.7
+BOS,"Boston, MA",37,2,5.41
+DTW,"Detroit, MI",45,2,4.44
+LGA,"New York, NY",25,1,4.0
+SDF,"Louisville, KY",1,0,0.0
+EVV,"Evansville, IN",2,0,0.0
+AVL,"Asheville, NC",4,0,0.0
+CHS,"Charleston, SC",2,0,0.0
+PIT,"Pittsburgh, PA",1,0,0.0
+DSM,"Des Moines, IA",3,0,0.0
+SGF,"Springfield, MO",1,0,0.0
+ABQ,"Albuquerque, NM",5,0,0.0
+GPT,"Gulfport/Biloxi, MS",1,0,0.0
+GRB,"Green Bay, WI",3,0,0.0
+MEM,"Memphis, TN",2,0,0.0
+ORF,"Norfolk, VA",3,0,0.0
+ANC,"Anchorage, AK",1,0,0.0
+SYR,"Syracuse, NY",4,0,0.0
+IND,"Indianapolis, IN",1,0,0.0
+XNA,"Fayetteville, AR",2,0,0.0
+ABE,"Allentown/Bethlehem/Easton, PA",1,0,0.0
+STL,"St. Louis, MO",4,0,0.0
+VLD,"Valdosta, GA",2,0,0.0
+BGR,"Bangor, ME",2,0,0.0
+OMA,"Omaha, NE",1,0,0.0
+CWA,"Mosinee, WI",1,0,0.0
+CHA,"Chattanooga, TN",1,0,0.0
+JFK,"New York, NY",26,0,0.0
+MSY,"New Orleans, LA",2,0,0.0
+HPN,"White Plains, NY",1,0,0.0
+CLE,"Cleveland, OH",3,0,0.0
+MGM,"Montgomery, AL",3,0,0.0
+AZO,"Kalamazoo, MI",2,0,0.0
+BDL,"Hartford, CT",7,0,0.0
+ORD,"Chicago, IL",1,0,0.0
+ABY,"Albany, GA",2,0,0.0
+LAN,"Lansing, MI",2,0,0.0
+MKE,"Milwaukee, WI",2,0,0.0
+PHL,"Philadelphia, PA",1,0,0.0
+MCI,"Kansas City, MO",1,0,0.0
+SAV,"Savannah, GA",2,0,0.0
+FSD,"Sioux Falls, SD",2,0,0.0
+LSE,"La Crosse, WI",1,0,0.0
+TVC,"Traverse City, MI",3,0,0.0
+PVD,"Providence, RI",3,0,0.0
+CVG,"Cincinnati, OH",8,0,0.0
+MOT,"Minot, ND",1,0,0.0
+ICT,"Wichita, KS",1,0,0.0
+CLT,"Charlotte, NC",1,0,0.0
+GSP,"Greer, SC",1,0,0.0
+CID,"Cedar Rapids/Iowa City, IA",1,0,0.0
+MOB,"Mobile, AL",3,0,0.0
+AGS,"Augusta, GA",1,0,0.0
+MQT,"Marquette, MI",1,0,0.0
+EYW,"Key West, FL",1,0,0.0
+DHN,"Dothan, AL",2,0,0.0
+AVP,"Scranton/Wilkes-Barre, PA",1,0,0.0
+MBS,"Saginaw/Bay City/Midland, MI",2,0,0.0
+JAN,"Jackson/Vicksburg, MS",1,0,0.0
+ATW,"Appleton, WI",4,0,0.0
+TRI,"Bristol/Johnson City/Kingsport, TN",2,0,0.0
+MIA,"Miami, FL",1,0,0.0
+ROA,"Roanoke, VA",1,0,0.0
+BTV,"Burlington, VT",1,0,0.0
+FAY,"Fayetteville, NC",1,0,0.0
+ITH,"Ithaca/Cortland, NY",1,0,0.0
+SCE,"State College, PA",1,0,0.0
