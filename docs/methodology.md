@@ -69,7 +69,7 @@ batch0/
 - airline_delays/
 - hourly_delays/
 - delay_types/
-
+- ml_predictions/
 
 This structure preserves the results of each processing cycle and enables downstream reporting and visualization.
 
