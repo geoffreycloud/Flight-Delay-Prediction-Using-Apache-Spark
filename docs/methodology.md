@@ -64,14 +64,12 @@ Results from each micro-batch are written to structured output directories using
 
 Each batch produces separate outputs for:
 
-outputs/
- ├── batch_0/
- │    ├── airport_delays/
- │    ├── airline_delays/
- │    ├── hourly_delays/
- │    └── delay_types/
- ├── batch_1/
- └── ...
+batch0/
+- airport_delays/
+- airline_delays/
+- hourly_delays/
+- delay_types/
+
 
 This structure preserves the results of each processing cycle and enables downstream reporting and visualization.
 
