@@ -33,6 +33,7 @@ git checkout v1.0.0
 
 **2. Run the streaming pipeline:**
 Please refer to [reproduction_guide.md](https://github.com/geoffreycloud/Flight-Delay-Prediction-Using-Apache-Spark/blob/main/docs/reproduction_guide.md)
+
 This produces per-batch outputs under `outputs/batch_0` through `outputs/batch_7`, each containing `airline_delays/`, `airport_delays/`, `hourly_delays/`, and `ml_predictions/` CSVs, plus `outputs/daily_trend/`.
 
 **3. Run the EDA / results notebook:**
