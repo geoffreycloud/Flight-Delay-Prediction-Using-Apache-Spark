@@ -15,10 +15,10 @@ This release marks the completion of the Flight Delay Prediction pipeline built 
 
 ## Documentation & Presentation
 
-- 📄 Final report: [`results.md`](./results.md)
-- 📄 Known limitations: [`LIMITATIONS.md`](./LIMITATIONS.md)
+- 📄 Final report: [`results.md`](https://github.com/geoffreycloud/Flight-Delay-Prediction-Using-Apache-Spark/blob/main/docs/results.md)
+- 📄 Known limitations: [`LIMITATIONS.md`](https://github.com/geoffreycloud/Flight-Delay-Prediction-Using-Apache-Spark/blob/main/docs/limitations.md)
 - 🎤 Final presentation slides: [Presentation](https://docs.google.com/presentation/d/1bnRHwZ-KdbSyXscu8n8XTHHo3j9hMrW2dyaKqgvT56U/edit?usp=sharing)
-- 📓 EDA notebook: [`notebooks/eda.ipynb`](./notebooks/eda.ipynb)
+- 📓 EDA notebook: [`notebooks/eda.ipynb`](https://github.com/geoffreycloud/Flight-Delay-Prediction-Using-Apache-Spark/blob/main/notebooks/eda.ipynb)
 
 ## Running the Final Pipeline
 
